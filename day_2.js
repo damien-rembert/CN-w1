@@ -7,6 +7,6 @@ console.log("All around the world".charAt(3).toUpperCase());
 console.log("All around the world".charAt(4).toUpperCase());
 console.log("All around the world".charAt(5).toUpperCase());
 
-let curse = "fucking";
+let curse = "blooming";
 console.log("All around the world");
 console.log(`All around the ${curse} world`);
