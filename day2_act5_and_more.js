@@ -112,14 +112,30 @@ console.log("\n************\nNUM PALINDROME activity\n************");
 // Check if the number is a palindrome (looks the same
 // forward as it does backwards e.g. 1001 or 20202).
 
-// let numString = num.toString();
-// let firstNum = numString.charAt(0);
-// let lastNum = numString.charAt(numString.length);
-// if (firstNum == lastNum) {
-//     console.log(`${numString} is a palindrome`);
-// } else {
-//     console.log(`${numString} is not a palindrome`);
-// }
+num = 20;
+let numString = num.toString();
+let numLength = numString.length - 1;
+let palindrome = true;
+let firstNum = 0;
+let lastNum = 0;
+
+
+for (let i = 0; i < (numLength / 2); i++) {
+    firstNum = numString.charAt(i);
+    lastNum = numString.charAt(numLength - i)
+
+    if (firstNum != lastNum) {
+        palindrome = false;
+    }
+}
+if (palindrome) {
+    console.log(`${numString} is a palindrome`);
+} else {
+    console.log(`${numString} is not a palindrome`);
+}
+
+
+
 
 
 console.log("\n************\nTIME AND SPACE activity\n************");
@@ -136,9 +152,9 @@ let townOfHome = "Liverpool"
 if (time >= 8 && time < 9){
     console.log("I'm commuting");
 } else if (time > 9){
-    console.log(`I'm at ${placeOfWork}`);
+    console.log(`I'm in ${placeOfWork}`);
 } else {
-    console.log(`I'm at ${townOfHome}`);
+    console.log(`I'm in ${townOfHome}`);
 }
 
 
