@@ -43,7 +43,10 @@ pressGrindBeans();
 
 
 console.log("\n************\nACCOUNT activity\n************");
-// TODO create a bank array that hold accounts
+// TODO
+// check if account requested by transaction exists in the bank array
+// return its index
+let bank = [[504921, 10], [50449921, 2050], [504545921, 500]]
 let amountWithdrawn = 500;
 let accNumber = 50449921;
 let accAmount = 2000;
@@ -56,16 +59,18 @@ let transaction5 = [500, 45];
 let transaction6 = [500, 50449921];
 let transaction7 = [500, 50449921];
 
+
+
 const cashWithdrawal = (transaction) => {
-    if ((transaction[1] != accStatus[0])) {
+    if ((transaction[1] != accStatus[0][0])) {
         console.log("We don't have that account");
         return false;        
-    } else if ((transaction[0] > accStatus[1])) {
+    } else if ((transaction[0] > accStatus[0][1])) {
         console.log("Insufficient funds");
         return false;                
     } else {
-        accStatus[1] -= transaction[0];
-        console.log(`Your account holds ${accStatus[1]}`)
+        accStatus[0][1] -= transaction[0];
+        console.log(`Your account holds ${accStatus[0][1]}`)
     }
 }
 cashWithdrawal(transaction1);
