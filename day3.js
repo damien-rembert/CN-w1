@@ -31,7 +31,6 @@ if (space1 == space2 && space2 == space3 && space1 != 0) {
 
 
 console.log("\n************\nCLASS\n************");
-console.log("\n************\nCLASS\n************");
 // between parenthesis: arguments
 // between curly brackets: code block
 const pressGrindBeans = () => {
@@ -43,36 +42,64 @@ pressGrindBeans();
 
 
 console.log("\n************\nACCOUNT activity\n************");
-// TODO
-// check if account requested by transaction exists in the bank array
-// return its index
 let bank = [[504921, 10], [50449921, 2050], [504545921, 500]]
-let amountWithdrawn = 500;
-let accNumber = 50449921;
-let accAmount = 2000;
-let accStatus = [50449921, 2000];
+
+
+// Your account now holds 1550
 let transaction1 = [500, 50449921];
+// We don't have that account
 let transaction2 = [500, 5645];
+// Insufficient funds
 let transaction3 = [5000, 50449921];
+// Your account now holds 1545
 let transaction4 = [5, 50449921];
+// We don't have that account
 let transaction5 = [500, 45];
+// Your account now holds 1045
 let transaction6 = [500, 50449921];
+// Your account now holds 545
 let transaction7 = [500, 50449921];
 
 
 
 const cashWithdrawal = (transaction) => {
-    if ((transaction[1] != accStatus[0][0])) {
+    // if ((transaction[1] != accStatus[0][0])) {
+    //     console.log("We don't have that account");
+    //     return false;
+    let accNumIndex = findAccountIndex(transaction[1]);
+    if (accNumIndex < 0) {
         console.log("We don't have that account");
-        return false;        
-    } else if ((transaction[0] > accStatus[0][1])) {
+        return false;
+    } else if ((transaction[0] > bank[accNumIndex][1])) {
         console.log("Insufficient funds");
         return false;                
     } else {
-        accStatus[0][1] -= transaction[0];
-        console.log(`Your account holds ${accStatus[0][1]}`)
+        // accStatus[0][1] -= transaction[0];
+        // console.log(`Your account holds ${accStatus[0][1]}`)
+        bank[accNumIndex][1] -= transaction[0];
+        console.log(`Your account now holds ${bank[accNumIndex][1]}`)
     }
 }
+
+// check if account requested by transaction exists in the bank array
+// return its index
+const findAccountIndex = (accNumber) => {
+    // console.log("findAccount running");
+    for (let i = 0; i < bank.length; i++) {
+        // console.log(`checking account ${bank[i][0]}`)
+        if (accNumber === bank[i][0]) {
+            // console.log(`found value at ${i}`)
+            return i;
+        }     
+    }
+    return -1;
+
+    // if (bank.includes(accNumber)) {
+    //     console.log("account found");
+    //     return bank.findIndex(accNumber);
+    // } 
+}
+
 cashWithdrawal(transaction1);
 cashWithdrawal(transaction2);
 cashWithdrawal(transaction3);

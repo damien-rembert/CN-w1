@@ -84,7 +84,29 @@ nameBox("array.concat()");
 console.log(bestSites.concat(spliceFirstTwo));
 console.log(bestSites);
 bestSites = bestSites.concat(spliceFirstTwo);
-nameBox("array.indexOf()");
-//indexOf()
+
 nameBox("array.flat()");
 //flat()
+// Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+let bidimensionalArray = [bestSites, spliceFirstTwo, firstTwo];
+console.log(bidimensionalArray);
+console.log(bidimensionalArray.flat());
+
+nameBox("array.indexOf()");
+// .indexOf()
+// Returns the first (least) index of an element within the array equal to an element, or -1 if none is found.
+
+
+nameBox(".findIndex()");
+// returns the index of the first element in the array 
+// that satisfies the provided testing function. 
+// Otherwise, it returns -1, 
+// indicating that no element passed the test. 
+
+nameBox(".includes()");
+// The includes() determines whether an array includes a certain value among its entries, returning true or false as appropriate. 
+
+
+nameBox(".find()");
+// Returns the found element in the array, if some element in the array satisfies the testing function, or undefined if not found.
+
