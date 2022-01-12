@@ -57,9 +57,10 @@ let theGrid = [["x", "x", "x"],
 //     console.log("You won!");
 // }
 function checkLineWin (lineNum) {
-    if (theGrid[0][lineNum] == theGrid[1][lineNum] && 
-        theGrid[1][lineNum] == theGrid[2][lineNum] && 
-        theGrid[0][lineNum] != 0) {
+    console.log("is there a win?")
+    if ((theGrid[lineNum][0] == theGrid[lineNum][1]) && 
+        (theGrid[lineNum][1] == theGrid[lineNum][2]) && 
+        (theGrid[lineNum][0] != 0)) {
             console.log("there's a win")
             return true;
     }
@@ -81,20 +82,20 @@ console.log("\n************\nTYPES OF DRINKS activity\n************");
 // Create a function that takes two parameters
 // for a coffee order (size, type of drink)
 // Let’s take this in
-// const takeOrder = (size, drinkType) => {
-// console.log(`Order received: ${size} ${drinkType}`);
-// }
-// takeOrder("Tall","Latte");
+const takeOrder = (size, drinkType) => {
+console.log(`Order received: ${size} ${drinkType}`);
+}
+takeOrder("Tall","Latte");
 
-// function newFunction() {
-//     var greeting = "hello";
-//     console.log(greeting);
-// }
-function coffeeOrder(size, drinkType) {
-    console.log(`your drink is a ${size} ${drinkType}`)
-
+function newFunction() {
+    var greeting = "hello";
+    console.log(greeting);
 }
 
+function coffeeOrder(size, drinkType) {
+    console.log(`your drink is a ${size} ${drinkType}`)
+}
+coffeeOrder("smoll", "juice");
 
 console.log("\n************\nARROW FUNCTION activity\n************");
 // Take this code and turn it into arrow function syntax
