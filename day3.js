@@ -42,6 +42,43 @@ const pressGrindBeans = () => {
 pressGrindBeans();
 
 
+console.log("\n************\nACCOUNT activity\n************");
+// TODO create a bank array that hold accounts
+let amountWithdrawn = 500;
+let accNumber = 50449921;
+let accAmount = 2000;
+let accStatus = [50449921, 2000];
+let transaction1 = [500, 50449921];
+let transaction2 = [500, 5645];
+let transaction3 = [5000, 50449921];
+let transaction4 = [5, 50449921];
+let transaction5 = [500, 45];
+let transaction6 = [500, 50449921];
+let transaction7 = [500, 50449921];
+
+const cashWithdrawal = (transaction) => {
+    if ((transaction[1] != accStatus[0])) {
+        console.log("We don't have that account");
+        return false;        
+    } else if ((transaction[0] > accStatus[1])) {
+        console.log("Insufficient funds");
+        return false;                
+    } else {
+        accStatus[1] -= transaction[0];
+        console.log(`Your account holds ${accStatus[1]}`)
+    }
+}
+cashWithdrawal(transaction1);
+cashWithdrawal(transaction2);
+cashWithdrawal(transaction3);
+cashWithdrawal(transaction4);
+cashWithdrawal(transaction5);
+cashWithdrawal(transaction6);
+cashWithdrawal(transaction7);
+// cashWithdrawal(300, accnumber);
+// cashWithdrawal(30, 50449921);
+// cashWithdrawal(30, 50449921);
+// cashWithdrawal(200, 50447921);
 
 console.log("\n************\nTIC TAC TOE CHECK WITH ARRAY NOT WORKING activity\n************");
 
