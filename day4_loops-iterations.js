@@ -125,13 +125,26 @@ nameBox("do...while loop");
 // between for loop, while loop and do...while loop. Give an
 // example of each. What are the pros and cons?
 
+
+
+// let doingIt = true;
 let doingIt = false;
 do {
-    console.log(doingIt);
-    if (doingIt) {
-        doingIt = false;
-    }
+    console.log("do while runs at least one time even if the condition is not met");
+    // doingIt = false;
 } while (doingIt);
+
+doingIt = false;
+while (doingIt) {
+    console.log("this never runs");
+}
+
+while (true) {
+    console.log("This could be an infinite loop but we used \"break\"");
+    break;
+}
+
+
 
 nameBox("prime numbers");
 // Activity(7):
@@ -142,11 +155,11 @@ let isPrimeArrow = (number) => {
     for (let i = 1; i <= number; i++) {
 
         if (number % i === 0 && i === number) {
-            console.log(`${i} and ${number} are the same and no remainder`);
+            // console.log(`${i} and ${number} are the same and no remainder`);
             return true;
         }
-        if (number % i === 0) {
-            console.log(`${i} is not a prime number`);
+        if (number % i === 0 && i !== 1) {
+            // console.log(`${number} is not a prime number`);
             return false;
         }
     }
