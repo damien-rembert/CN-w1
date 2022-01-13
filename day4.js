@@ -2,7 +2,6 @@ function nameBox(title) {
     console.log(`\n************\n${title.toUpperCase()} activity\n************`);
 }
 
-nameBox("array power");
 // Activity(1):
 // Create a list of your favourite website (3 of them), and
 // then add another two once you’ve created the list.
@@ -11,6 +10,18 @@ nameBox("array power");
 let bestSites = ["www.whatever.com", "www.google.co.uk", "www.internet.fr"];
 console.log(bestSites);
 bestSites[3] = "www.zoomba.tk";
+console.log(bestSites);
+
+nameBox("push");
+// add to the end of the list
+bestSites.push("www.imgur.com");
+console.log(bestSites);
+
+nameBox("pop");
+// remove one item from the end of the list
+bestSites.pop();
+console.log(bestSites);
+
 bestSites.push("www.imgur.com");
 console.log(bestSites);
 // Activity(2):
@@ -94,19 +105,41 @@ console.log(bidimensionalArray.flat());
 
 nameBox("array.indexOf()");
 // .indexOf()
-// Returns the first (least) index of an element within the array equal to an element, or -1 if none is found.
-
+// Returns the first (least) index of an element within the array equal to an element,
+//  or -1 if none is found.
+console.log(bestSites.indexOf("www.google.com"));
+console.log(bestSites.indexOf("www.google.co.uk"));
 
 nameBox(".findIndex()");
 // returns the index of the first element in the array 
 // that satisfies the provided testing function. 
 // Otherwise, it returns -1, 
-// indicating that no element passed the test. 
+// indicating that no element passed the test.
+
+// const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+// const regex = /[A-Z]/g;
+// const found = paragraph.match(regex);
+// console.log(found);
+// expected output: Array ["T", "I"]
+
+function findAllIndexesRegEx() {
+
+    
+}
+console.log(findAllIndexesRegEx("www"));
 
 nameBox(".includes()");
-// The includes() determines whether an array includes a certain value among its entries, returning true or false as appropriate. 
+// The includes() determines whether an array includes a certain value among its entries, 
+// returning true or false as appropriate. 
 
 
 nameBox(".find()");
-// Returns the found element in the array, if some element in the array satisfies the testing function, or undefined if not found.
+// Returns the found element in the array, 
+// if some element in the array satisfies the testing function, 
+// or undefined if not found.
 
+const exampleArr = [1 , 2 , 3];
+exampleArr[3] = 4;
+exampleArr[0] = 4;
+
+console.log(exampleArr);
