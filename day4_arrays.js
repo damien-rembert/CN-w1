@@ -143,3 +143,12 @@ exampleArr[3] = 4;
 exampleArr[0] = 4;
 
 console.log(exampleArr);
+
+nameBox("sub sandwich");
+let ingredients = ["tomato" , "lettuce" , "cheese", "another thing", "last thing"];
+console.log()
+// ingredients.push("bacon");
+ingredients.unshift("bacon");
+function orderSub(params) {
+    console.log(ingredients);
+}
